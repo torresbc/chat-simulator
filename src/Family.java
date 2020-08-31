@@ -17,7 +17,7 @@ public class Family extends Person {
 
     @Override
     public void actionSalutation (String otherPerson) {
-        System.out.println(this.name + ": Olá, " + classification + ", " + otherPerson + "!");
+        System.out.println(this.name + ": Olá, " + classification + "!");
     }
 
     @Override

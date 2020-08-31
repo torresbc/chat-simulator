@@ -10,7 +10,7 @@ public class Unknown extends Person {
     }
 
     public void actionUnknown (String otherPerson) {
-        System.out.println(this.name + ": Meu nome é " + this.name + ", é um prazer te conhecer " +
+        System.out.println(this.name + ": Meu nome é " + this.name + ", aposto que seremos ótimos amigos, " +
                 otherPerson + "." );
     }
 

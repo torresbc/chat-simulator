@@ -32,6 +32,8 @@ public class JavaSample {
 
     //Instância novos objetos
     static void newRegister() {
+        System.out.print(Color.BLUE_BACKGROUND);
+        System.out.print(Color.BLACK_BOLD);
         System.out.println("Oba! Vamos cadastrar um novo contato!");
         System.out.println("Digite o nome do contato:");
 
@@ -40,6 +42,7 @@ public class JavaSample {
 
         while (!classification.equals("A") && !classification.equals("B") && !classification.equals("C")
                 && !classification.equals("D")) {
+
 
             System.out.println("Escolha uma classificação para o seu novo contato:\nA - Desconhecido\nB - Colega\n" +
                     "C - Familiar\nD - Cônjuge");
@@ -68,12 +71,18 @@ public class JavaSample {
                 errorMessage();
             }
         }
+        System.out.print(Color.RESET);
     }
 
     //Inicializa o chat com o BOT
     static void initializeChat() {
 
+        System.out.print(Color.BLUE_BACKGROUND);
+        System.out.print(Color.BLACK_BOLD);
+
         System.out.println("Escolha a opção referente ao contato que deseja conversar:");
+        System.out.print(Color.RESET);
+
         Integer cont = 0;
         for (Person p :
                 objectList) {
@@ -120,6 +129,8 @@ public class JavaSample {
 
     //Chat correspondente à Desconhecidos
     static void chatUnknown(Person objectIndex) {
+        System.out.print(Color.GREEN_BACKGROUND);
+        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
         ((Unknown) objectIndex).actionSalutation(userName);
@@ -130,10 +141,13 @@ public class JavaSample {
         answerSimulator = input();
         ((Unknown) objectIndex).actionFarewell(userName);
         answerSimulator = input();
+        System.out.print(Color.RESET);
     }
 
     //Chat correspondente à Colegas
     static void chatColleague(Person objectIndex) {
+        System.out.print(Color.GREEN_BACKGROUND);
+        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
         ((Colleague) objectIndex).actionSalutation(userName);
@@ -144,10 +158,13 @@ public class JavaSample {
         answerSimulator = input();
         ((Colleague) objectIndex).actionFarewell(userName);
         answerSimulator = input();
+        System.out.print(Color.RESET);
     }
 
     //Chat correspondente à Familiares
     static void chatFamily(Person objectIndex) {
+        System.out.print(Color.GREEN_BACKGROUND);
+        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
         ((Family) objectIndex).actionSalutation(userName);
@@ -158,10 +175,13 @@ public class JavaSample {
         answerSimulator = input();
         ((Family) objectIndex).actionFarewell(userName);
         answerSimulator = input();
+        System.out.print(Color.RESET);
     }
 
     //Chat correspondente à Conjuguês
     static void chatPartner(Person objectIndex) {
+        System.out.print(Color.GREEN_BACKGROUND);
+        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
         ((Partner) objectIndex).actionSalutation(userName);
@@ -172,6 +192,7 @@ public class JavaSample {
         answerSimulator = input();
         ((Partner) objectIndex).actionFarewell(userName);
         answerSimulator = input();
+        System.out.print(Color.RESET);
     }
 
     //Inicializa o menu de opções padrão
@@ -194,7 +215,7 @@ public class JavaSample {
             else if (option.equals("B") && !objectList.isEmpty()) {
                 initializeChat();
             }
-            else {
+            else if (objectList.isEmpty() || !option.equals("A") && !option.equals("B") && !option.equals("C")) {
                 errorMessage();
             }
         }
