@@ -5,21 +5,25 @@ public class Partner extends Person {
     }
 
     @Override
-    public void actionSalutation (String otherPerson) {
-        System.out.println(this.name + ": Olá, meu amor!");
+    public String actionSalutation (String otherPerson) {
+        String text = this.name + ": Olá, meu amor!\n";
+        return text;
     }
 
     @Override
-    public void actionFeeling (String otherPerson) {
-        System.out.println(this.name + ": Já falei que eu te amo hoje? <3 ");
+    public String actionFeeling (String otherPerson) {
+        String text = this.name + ": Já falei que eu te amo hoje? <3\n";
+        return text;
     }
 
     @Override
-    public void actionFarewell (String otherPerson) {
-        System.out.println(this.name + ": Preciso ir agora! Mas, irei voltar mais cedo para jantarmos juntos. Beijos!");
+    public String actionFarewell (String otherPerson) {
+        String text = this.name + ": Preciso ir agora! Mas, irei voltar mais cedo para jantarmos juntos. Beijos!\n";
+        return text;
     }
 
-    public void actionPartner () {
-        System.out.println("Nossa música deveria ser: 'Wonderful Tonight', o que acha?");
+    public String actionPartner () {
+        String text = "Nossa música deveria ser: 'Wonderful Tonight', o que acha?\n";
+        return text;
     }
 }

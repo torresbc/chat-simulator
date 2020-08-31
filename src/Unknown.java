@@ -5,13 +5,15 @@ public class Unknown extends Person {
     }
 
     @Override
-    public void actionFeeling (String otherPerson) {
-        System.out.println(this.name + ": Foi um prazer te conhecer, " + otherPerson + ".");
+    public String actionFeeling (String otherPerson) {
+        String text = this.name + ": Foi um prazer te conhecer, " + otherPerson + ".\n";
+        return text;
     }
 
-    public void actionUnknown (String otherPerson) {
-        System.out.println(this.name + ": Meu nome é " + this.name + ", aposto que seremos ótimos amigos, " +
-                otherPerson + "." );
+    public String actionUnknown (String otherPerson) {
+        String text = this.name + ": Meu nome é " + this.name + ", aposto que seremos ótimos amigos, " +
+                otherPerson + ".\n";
+        return text;
     }
 
 }

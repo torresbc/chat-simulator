@@ -16,16 +16,19 @@ public class Family extends Person {
     }
 
     @Override
-    public void actionSalutation (String otherPerson) {
-        System.out.println(this.name + ": Olá, " + classification + "!");
+    public String actionSalutation (String otherPerson) {
+        String text = this.name + ": Olá, " + classification + "!\n";
+        return text;
     }
 
     @Override
-    public void actionFarewell (String otherPerson) {
-        System.out.println(this.name + ": Até mais, " + classification + " :D !");
+    public String actionFarewell (String otherPerson) {
+        String text = this.name + ": Até mais, " + classification + " :D !\n";
+        return text;
     }
 
-    public void actionFamily () {
-        System.out.println(this.name + ": Diga à família toda que eu mandei um abraço!");
+    public String actionFamily () {
+        String text = this.name + ": Diga à família toda que eu mandei um abraço!\n";
+        return text;
     }
 }

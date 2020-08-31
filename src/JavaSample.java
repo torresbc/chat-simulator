@@ -6,7 +6,6 @@ public class JavaSample {
 
     //Realiza a entrada de dados
     static String input() {
-
        String input = "";
        Scanner input1 = new Scanner(System.in);
        input = input1.next();
@@ -18,6 +17,24 @@ public class JavaSample {
         System.out.print(Color.RED_BACKGROUND);
         System.out.print(Color.BLACK_BOLD);
         System.out.println("Opção inválida! Tente novamente  ¯\\_(ツ)_/¯");
+        System.out.print(Color.RESET);
+    }
+
+    //Efeito: Máquina de escrever para o chat
+    static void outputChat(String text) {
+        System.out.print(Color.PURPLE_BOLD_BRIGHT);
+        for (int i = 0; i < text.length(); i++)
+        {
+            System.out.print(text.charAt(i));
+            try
+            {
+                Thread.sleep(100);
+            }
+            catch (InterruptedException error)
+            {
+                error.printStackTrace();
+            }
+        }
         System.out.print(Color.RESET);
     }
 
@@ -42,7 +59,6 @@ public class JavaSample {
 
         while (!classification.equals("A") && !classification.equals("B") && !classification.equals("C")
                 && !classification.equals("D")) {
-
 
             System.out.println("Escolha uma classificação para o seu novo contato:\nA - Desconhecido\nB - Colega\n" +
                     "C - Familiar\nD - Cônjuge");
@@ -71,12 +87,12 @@ public class JavaSample {
                 errorMessage();
             }
         }
+
         System.out.print(Color.RESET);
     }
 
     //Inicializa o chat com o BOT
     static void initializeChat() {
-
         System.out.print(Color.BLUE_BACKGROUND);
         System.out.print(Color.BLACK_BOLD);
 
@@ -124,80 +140,66 @@ public class JavaSample {
                 errorMessage();
             }
         }
-
     }
 
     //Chat correspondente à Desconhecidos
     static void chatUnknown(Person objectIndex) {
-        System.out.print(Color.GREEN_BACKGROUND);
-        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
-        ((Unknown) objectIndex).actionSalutation(userName);
+        outputChat(((Unknown) objectIndex).actionSalutation(userName));
         answerSimulator = input();
-        ((Unknown) objectIndex).actionUnknown(userName);
+        outputChat(((Unknown) objectIndex).actionUnknown(userName));
         answerSimulator = input();
-        ((Unknown) objectIndex).actionFeeling(userName);
+        outputChat(((Unknown) objectIndex).actionFeeling(userName));
         answerSimulator = input();
-        ((Unknown) objectIndex).actionFarewell(userName);
+        outputChat(((Unknown) objectIndex).actionFarewell(userName));
         answerSimulator = input();
-        System.out.print(Color.RESET);
     }
 
     //Chat correspondente à Colegas
     static void chatColleague(Person objectIndex) {
-        System.out.print(Color.GREEN_BACKGROUND);
-        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
-        ((Colleague) objectIndex).actionSalutation(userName);
+        outputChat(((Colleague) objectIndex).actionSalutation(userName));
         answerSimulator = input();
-        ((Colleague) objectIndex).actionColleague(userName);
+        outputChat(((Colleague) objectIndex).actionColleague(userName));
         answerSimulator = input();
-        ((Colleague) objectIndex).actionFeeling(userName);
+        outputChat(((Colleague) objectIndex).actionFeeling(userName));
         answerSimulator = input();
-        ((Colleague) objectIndex).actionFarewell(userName);
+        outputChat(((Colleague) objectIndex).actionFarewell(userName));
         answerSimulator = input();
-        System.out.print(Color.RESET);
     }
 
     //Chat correspondente à Familiares
     static void chatFamily(Person objectIndex) {
-        System.out.print(Color.GREEN_BACKGROUND);
-        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
-        ((Family) objectIndex).actionSalutation(userName);
+        outputChat(((Family) objectIndex).actionSalutation(userName));
         answerSimulator = input();
-        ((Family) objectIndex).actionFamily();
+        outputChat(((Family) objectIndex).actionFamily());
         answerSimulator = input();
-        ((Family) objectIndex).actionFeeling(userName);
+        outputChat(((Family) objectIndex).actionFeeling(userName));
         answerSimulator = input();
-        ((Family) objectIndex).actionFarewell(userName);
+        outputChat(((Family) objectIndex).actionFarewell(userName));
         answerSimulator = input();
-        System.out.print(Color.RESET);
     }
 
     //Chat correspondente à Conjuguês
     static void chatPartner(Person objectIndex) {
-        System.out.print(Color.GREEN_BACKGROUND);
-        System.out.print(Color.BLACK_BOLD_BRIGHT);
         String answerSimulator = "";
 
-        ((Partner) objectIndex).actionSalutation(userName);
+        outputChat(((Partner) objectIndex).actionSalutation(userName));
         answerSimulator = input();
-        ((Partner) objectIndex).actionPartner();
+        outputChat(((Partner) objectIndex).actionPartner());
         answerSimulator = input();
-        ((Partner) objectIndex).actionFeeling(userName);
+        outputChat(((Partner) objectIndex).actionFeeling(userName));
         answerSimulator = input();
-        ((Partner) objectIndex).actionFarewell(userName);
+        outputChat(((Partner) objectIndex).actionFarewell(userName));
         answerSimulator = input();
-        System.out.print(Color.RESET);
     }
 
     //Inicializa o menu de opções padrão
     static void menu() {
-
         String option = "";
 
         while (!option.equals("C")) {

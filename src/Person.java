@@ -14,15 +14,18 @@ public class Person {
         this.name = name;
     }
 
-    public void actionSalutation (String otherPerson) {
-        System.out.println(this.name + ": Olá, " + otherPerson + "!");
+    public String actionSalutation (String otherPerson) {
+        String text = this.name + ": Olá, " + otherPerson + "!\n";
+        return text;
     }
 
-    public void actionFeeling (String otherPerson) {
-        System.out.println(this.name + ": Foi ótimo falar com você! Deveríamos nós falar mais vezes!");
+    public String actionFeeling (String otherPerson) {
+        String text = this.name + ": Foi ótimo falar com você! Deveríamos nós falar mais vezes!\n";
+        return text;
     }
 
-    public void actionFarewell (String otherPerson) {
-        System.out.println(this.name + ": Até mais " + otherPerson + " :D !");
+    public String actionFarewell (String otherPerson) {
+        String text = this.name + ": Até mais " + otherPerson + " :D !\n";
+        return text;
     }
 }
